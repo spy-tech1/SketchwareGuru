@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battery Percentage App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+      padding: 2rem;
+    }header {
+  background-color: #1e293b;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 12px;
+}
+
+header h1 {
+  color: #38bdf8;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+article {
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+h2 {
+  color: #22d3ee;
+  font-size: 1.5rem;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tutorial: How to Create a Battery Percentage App</h1>
+  </header>  <article>
+    <h2>📹 Watch Video</h2>
+    <iframe width="100%" height="315"
+    src="https://www.youtube.com/embed/m_5A83ZHq54"
+    frameborder="0"
+    allowfullscreen
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+</iframe><h2>📖 Introduction</h2>
+<p>This tutorial will walk you through how to create a simple battery percentage app using Sketchware Pro. You’ll learn how to add source code that shows battery percentage of a device</p>
+
+<h2>📟 Source Code Used</h2>
+
+<pre id="batteryCode" style="
+  background: #1e1e1e;   /* dark background */
+  color: #ffffff;        /* white text */
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0 15px;        /* keeps inside page margin */
+  font-family: monospace;
+">
+BatteryManager bm = (BatteryManager) getSystemService(BATTERY_SERVICE);
+
+int battery_percent = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
+
+👉𝗧𝗲𝘅𝘁𝘃𝗶𝗲𝘄𝗜𝗗👈.setText(battery_percent + "%");
+</pre>
+
+<div style="margin: 10px 15px;">
+  <button onclick="copyCode()" style="
+    padding: 6px 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  ">📋 Copy Code</button>
+</div>
+
+<script>
+function copyCode() {
+    var codeText = document.getElementById("batteryCode").innerText;
+    var tempTextarea = document.createElement("textarea");
+    tempTextarea.value = codeText;
+    document.body.appendChild(tempTextarea);
+    tempTextarea.select();
+    tempTextarea.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    document.body.removeChild(tempTextarea);
+    alert("✅ Code copied to clipboard!");
+}
+</script>
+
+<h2>🧩 What You'll Learn</h2>
+<ul>
+  <li>How to use <strong>"add source directly" block</strong></li>
+</ul>
+
+<h2>🛠️ Steps</h2>
+<ol>
+  <li>Create a new project in Sketchware Pro.</li>
+  <li>Add a two textview widgets</li>
+  <li>Add a source code directly block</li>
+  <li>Paste the source code above and input the correct Textview ID in the "👉TextviewID👈" e.g. Textview2.setText(battery_percent + "%");</li>
+  <li>Run the app and test it</li>
+</ol>
+
+<p>Follow our <a href="https://whatsapp.com/channel/0029Vb77XV09Bb66Pba7eB1Tk">WhatsApp Channel</a>.</p>
+
+  </article>  <footer>
+    © 2025 Sketchware Guru — All rights reserved.
+  </footer>
+</body>
+</html>
